@@ -1,0 +1,9 @@
+.current .temperature {
+    font-size: 44px;
+}
+
+.current .tempContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
