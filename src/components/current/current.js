@@ -8,7 +8,7 @@ function Current() {
   return data ? (
     <div className="current">
       <div className="tempContainer">
-        <img src={`/images/${data.currentConditions.icon}.png`} alt="weatherIcon" />
+        <img src={`/images/${data.currentConditions.icon}.png`} alt={data.currentConditions.icon} />
         <span className="temperature">
           {data.currentConditions.temp}°
         </span>

@@ -38,6 +38,10 @@ export function DataProvider({ children }) {
     };
 
     fetchData();
+
+    const intervalId = setInterval(fetchData, 3600000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -46,3 +50,4 @@ export function DataProvider({ children }) {
     </DataContext.Provider>
   );
 }
+
