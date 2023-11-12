@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 import { DataContext } from "../../api";
+import "./Current.css"
 
 function Current() {
   const data = useContext(DataContext);

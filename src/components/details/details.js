@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../api";
+import "./Details.css"
 
 const conditions = [
   { label: "Umidade do Ar", key: "humidity" },
