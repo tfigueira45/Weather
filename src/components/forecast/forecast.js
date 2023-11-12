@@ -20,7 +20,7 @@ function Forecast() {
         return (
             <li key={item}>
                 <span>{item}</span>
-                <img src={`/images/${icon}.png`} alt={icon} />
+                <img src={`./images/${icon}.png`} alt={icon} />
                 <p>{temp}</p>
                 <span>{`${tempmin}°/${tempmax}°`}</span>
             </li>
