@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
-import { DataContext } from "../../api";
-import "./Header.css"
+import { DataContext } from "../../contexts/api";
+import "./header.css"
 
 function Header(){
     const data = useContext(DataContext);
 
-    return (
+    return data ? (
         <header>
             <span>{data.address}</span>
         </header>
+    ) : (
+        <header></header>
     )
 }
 

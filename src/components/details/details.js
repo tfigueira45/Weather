@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { DataContext } from "../../api";
-import "./Details.css"
+import { DataContext } from "../../contexts/api";
+import "./details.css"
 
 const conditions = [
   { label: "Umidade do Ar", key: "humidity" },
   { label: "Sensação Térmica", key: "feelslike" },
   { label: "Velocidadde do Vento", key: "windspeed" },
-  { label: "índice de UV", key: "uvindex" },
+  { label: "Índice de UV", key: "uvindex" },
   { label: "Chance de Chuva", key: "precipprob" },
   { label: "Visibilidade", key: "visibility" },
 ];

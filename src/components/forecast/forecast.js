@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { DataContext } from "../../api";
-import "./Forecast.css"
+import { DataContext } from "../../contexts/api";
+import "./forecast.css"
 
 const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
 
