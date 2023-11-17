@@ -1,5 +1,5 @@
-import React from 'react';
-import { DataProvider } from './contexts/api';
+import React, { useContext } from 'react';
+import { DataContext } from './contexts/api';
 import Header from './components/header/header';
 import Current from './components/current/current'
 import Details from './components/details/details';
@@ -7,13 +7,19 @@ import Forecast from './components/forecast/forecast';
 import './App.css';
 
 function App() {
-  return (
-    <DataProvider>
+  const data = useContext(DataContext)
+  return data ? (
+    <>
       <Header />
       <Current />
       <Details />
       <Forecast />
-    </DataProvider>
+    </>
+  ) : (
+    <>
+      <span className="spinner"></span>
+      <p>Carregando...</p>
+    </>
   );
 }
 

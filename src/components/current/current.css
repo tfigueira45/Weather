@@ -1,3 +1,12 @@
+.current {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
 .current .temperature {
     font-size: 44px;
 }
@@ -5,5 +14,14 @@
 .current .tempContainer {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+}
+
+.current .minMax {
+    font-size: 21px;
+}
+
+.current .desc {
+    font-size: 20px;
 }

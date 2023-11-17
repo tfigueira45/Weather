@@ -5,10 +5,10 @@ import "./current.css"
 function Current() {
   const data = useContext(DataContext);
 
-  return data ? (
+  return (
     <div className="current">
       <div className="tempContainer">
-        <img src={`./images/${data.currentConditions.icon}.png`} alt={data.currentConditions.icon} />
+        <img src={`Weather/images/${data.currentConditions.icon}.png`} alt={data.currentConditions.icon} />
         <span className="temperature">
           {data.currentConditions.temp}°
         </span>
@@ -18,8 +18,6 @@ function Current() {
       </p>
       <p className="desc">{data.currentConditions.conditions}</p>
     </div>
-  ) : (
-    <div className="current"></div>
   )
 }
 

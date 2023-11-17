@@ -2,31 +2,40 @@ import React, { useContext } from "react";
 import { DataContext } from "../../contexts/api";
 import "./details.css"
 
-const conditions = [
-  { label: "Umidade do Ar", key: "humidity" },
+
+const leftList = [
+  { label: "Umidade", key: "humidity" },
   { label: "Sensação Térmica", key: "feelslike" },
-  { label: "Velocidadde do Vento", key: "windspeed" },
+  { label: "Vento", key: "windspeed" }
+]
+
+const rightList = [
   { label: "Índice de UV", key: "uvindex" },
-  { label: "Chance de Chuva", key: "precipprob" },
+  { label: "Chuva", key: "precipprob" },
   { label: "Visibilidade", key: "visibility" },
 ];
 
 function Details() {
   const data = useContext(DataContext);
 
-  return data ? (
-    <div className="details">
+  function List({list}){
+    return (
       <ul>
-        {conditions.map(({ label, key }) => (
-          <li key={key}>
-            <span>{label}</span>
-            <span>{data.currentConditions[key]}</span>
-          </li>
-        ))}
+          {list.map(({ label, key }) => (
+            <li key={key}>
+              <span className="label">{label}</span>
+              <span className="value" >{data.currentConditions[key]}</span>
+            </li>
+          ))}
       </ul>
+    )
+  }
+
+  return (
+    <div className="details">
+      <List list={leftList} />
+      <List list={rightList} />
     </div>
-  ) : (
-    <div className="details"></div>
   );
 }
 

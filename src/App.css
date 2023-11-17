@@ -2,3 +2,38 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --night-background: #456896;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--night-background);
+  color: #ffffff;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+@media (max-width: 750px) {
+  #root {
+    width: 100%;
+    padding: 5px;
+  }
+  .forecast {
+    gap: 3px;
+    padding: 0 5px 0;
+  }
+}

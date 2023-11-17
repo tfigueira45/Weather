@@ -5,12 +5,10 @@ import "./header.css"
 function Header(){
     const data = useContext(DataContext);
 
-    return data ? (
+    return (
         <header>
             <span>{data.address}</span>
         </header>
-    ) : (
-        <header></header>
     )
 }
 

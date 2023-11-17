@@ -8,27 +8,25 @@ function Forecast() {
   const day = new Date().getDay();
   let days = [];
   for (let i = 1; i <= 5; i++) {
-    days.push(weekDays[(day + i) > 6 ? 7 - day : day + i]);
+    days.push(weekDays[(day + i) % 7]);
   }
 
   const data = useContext(DataContext);
 
-  return data ? (
+  return (
     <div className="forecast">
       {days.map((item, i) => {
         const {icon, temp, tempmin, tempmax} = data.days[i + 1]
         return (
             <li key={item}>
                 <span>{item}</span>
-                <img src={`./images/${icon}.png`} alt={icon} />
-                <p>{temp}</p>
-                <span>{`${tempmin}°/${tempmax}°`}</span>
+                <img src={`Weather/images/${icon}.png`} alt={icon} />
+                <p>{temp}°</p>
+                <span className="small">{`${tempmin.toFixed(0)}°/${tempmax.toFixed(0)}°`}</span>
             </li>
         );
       })}
     </div>
-  ) : (
-    <div className="forecast"></div>
   );
 }
 
