@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { DataContext } from "../../contexts/api";
 import "./forecast.css"
 
-const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
+const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 
 function Forecast() {
   const day = new Date().getDay();
@@ -14,11 +14,11 @@ function Forecast() {
   const data = useContext(DataContext);
 
   return (
-    <div className="forecast">
+    <div className="forecast flex">
       {days.map((item, i) => {
         const {icon, temp, tempmin, tempmax} = data.days[i + 1]
         return (
-            <li key={item}>
+            <li className="flex" key={item}>
                 <span>{item}</span>
                 <img src={`Weather/images/${icon}.png`} alt={icon} />
                 <p>{temp}°</p>

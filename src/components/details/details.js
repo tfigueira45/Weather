@@ -1,40 +1,28 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../contexts/api";
-import "./details.css"
+import "./details.css";
 
 
-const leftList = [
-  { label: "Umidade", key: "humidity" },
-  { label: "Sensação Térmica", key: "feelslike" },
-  { label: "Vento", key: "windspeed" }
-]
-
-const rightList = [
-  { label: "Índice de UV", key: "uvindex" },
-  { label: "Chuva", key: "precipprob" },
-  { label: "Visibilidade", key: "visibility" },
+const list = [
+  { label: "Umidade", key: "humidity", unity: "%" },
+  { label: "Vento", key: "windspeed", unity: " km/h"  },
+  { label: "Chuva", key: "precipprob", unity: "%"  },
+  { label: "Visibilidade", key: "visibility", unity: " km"  },
 ];
 
 function Details() {
   const data = useContext(DataContext);
 
-  function List({list}){
-    return (
-      <ul>
-          {list.map(({ label, key }) => (
-            <li key={key}>
+  return (
+    <div className="details flex">
+      <ul className="flex">
+          {list.map(({ label, key, unity }) => (
+            <li className="flex" key={key}>
               <span className="label">{label}</span>
-              <span className="value" >{data.currentConditions[key]}</span>
+              <span className="value" >{`${data.currentConditions[key]}${unity}`}</span>
             </li>
           ))}
       </ul>
-    )
-  }
-
-  return (
-    <div className="details">
-      <List list={leftList} />
-      <List list={rightList} />
     </div>
   );
 }

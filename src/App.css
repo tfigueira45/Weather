@@ -3,20 +3,20 @@
   padding: 0;
 }
 
-:root {
-  --night-background: #456896;
-}
-
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--night-background);
+  background-color: #353535;
   color: #ffffff;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+.flex {
+  display: flex;
 }
 
 #root{
@@ -25,6 +25,26 @@ body {
   align-items: center;
   flex-direction: column;
   max-width: 100%;
+}
+
+.spinner{
+  height: 70px;
+  width: 70px;
+  border: 15px solid rgb(255, 255, 255, 0.1);
+  border-top-color: #456896;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  animation: spin 1s linear infinite;
+}
+
+.load {
+  font-size: 18px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 750px) {

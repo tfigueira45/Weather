@@ -27,13 +27,13 @@ async function getWeatherData(location) {
   return weather;
 }
 
-
 export function DataProvider({ children }) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await getLocationData();
+      console.log(result)
       setData(result);
     };
 

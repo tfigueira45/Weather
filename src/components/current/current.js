@@ -6,8 +6,8 @@ function Current() {
   const data = useContext(DataContext);
 
   return (
-    <div className="current">
-      <div className="tempContainer">
+    <div className="current flex">
+      <div className="tempContainer flex">
         <img src={`Weather/images/${data.currentConditions.icon}.png`} alt={data.currentConditions.icon} />
         <span className="temperature">
           {data.currentConditions.temp}°
