@@ -2,10 +2,11 @@ import { createContext, useState, useEffect } from "react";
 
 const locationApiKey = "8082d923406246198d9d8951fa7a092c";
 const weatherApiKey = "LW3CHSSCPTHUDGR654B5UJCSW";
+const accuWeatherApiKey = "1rw6ZU0OMrGOWjnAG2k4IYQxPxVDmQtA"
 
 export const DataContext = createContext();
 
-async function getApiData(url) {
+export async function getApiData(url) {
   let request = await fetch(url);
   let data = await request.json();
 
@@ -13,10 +14,15 @@ async function getApiData(url) {
 }
 
 async function getLocationData() {
-  let location = await getApiData(
+  let locationName = await getApiData(
     `https://ipgeolocation.abstractapi.com/v1/?api_key=${locationApiKey}`
   );
-  return getWeatherData(`${location.city}, ${location.region_iso_code}`);
+
+  let locationCode = await getApiData(
+    `http://dataservice.accuweather.com/locations/v1/search?apikey=${accuWeatherApiKey}&q=${`${locationName.city}, ${locationName.region_iso_code}`}``}`
+  )
+  
+  return locationCode.Key
 }
 
 async function getWeatherData(location) {
@@ -50,4 +56,3 @@ export function DataProvider({ children }) {
     </DataContext.Provider>
   );
 }
-

@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../contexts/api";
-import "./header.css"
+import SearchBar from './searchBar/searchBar'
+import "./header.css";
 
-function Header(){
-    const data = useContext(DataContext);
+function Header() {
+  const data = useContext(DataContext);
 
-    return (
-        <header>
-            <span>{data.address}</span>
-        </header>
-    )
+  return (
+    <header>
+        <SearchBar />
+        <span>{data.address}</span>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

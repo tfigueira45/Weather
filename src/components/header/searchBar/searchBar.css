@@ -1,0 +1,28 @@
+.search-container {
+    display: flex;
+    align-items: stretch;
+    margin: auto;
+    height: 35px;
+}
+
+.search-container button {
+    padding: 7px 10px;
+    background: #8aafdf;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.search-container input {
+    padding: 7px;
+    font-size: 17px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.search-container input:focus {
+    outline: transparent;
+}
