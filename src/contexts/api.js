@@ -2,11 +2,10 @@ import { createContext, useState, useEffect } from "react";
 
 const locationApiKey = "8082d923406246198d9d8951fa7a092c";
 const weatherApiKey = "LW3CHSSCPTHUDGR654B5UJCSW";
-const accuWeatherApiKey = "1rw6ZU0OMrGOWjnAG2k4IYQxPxVDmQtA"
 
 export const DataContext = createContext();
 
-export async function getApiData(url) {
+async function getApiData(url) {
   let request = await fetch(url);
   let data = await request.json();
 
@@ -14,15 +13,10 @@ export async function getApiData(url) {
 }
 
 async function getLocationData() {
-  let locationName = await getApiData(
+  let location = await getApiData(
     `https://ipgeolocation.abstractapi.com/v1/?api_key=${locationApiKey}`
   );
-
-  let locationCode = await getApiData(
-    `http://dataservice.accuweather.com/locations/v1/search?apikey=${accuWeatherApiKey}&q=${`${locationName.city}, ${locationName.region_iso_code}`}``}`
-  )
-  
-  return locationCode.Key
+  return getWeatherData(`${location.city}, ${location.region_iso_code}`);
 }
 
 async function getWeatherData(location) {
@@ -33,21 +27,27 @@ async function getWeatherData(location) {
   return weather;
 }
 
+export async function searchWeatherData(q){
+  try {
+    let weather = await getWeatherData(q);
+    return weather;
+
+  } catch (error) {
+    console.log(error); 
+    return null;
+  }
+}
+
 export function DataProvider({ children }) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await getLocationData();
-      console.log(result)
       setData(result);
     };
 
     fetchData();
-
-    const intervalId = setInterval(fetchData, 3600000);
-
-    return () => clearInterval(intervalId);
   }, []);
 
   return (

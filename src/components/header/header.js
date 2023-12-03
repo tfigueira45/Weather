@@ -6,6 +6,8 @@ import "./header.css";
 function Header() {
   const data = useContext(DataContext);
 
+  console.log(data)
+
   return (
     <header>
         <SearchBar />

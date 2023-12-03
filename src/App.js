@@ -18,7 +18,7 @@ function App() {
   ) : (
     <>
       <span className="spinner"></span>
-      <p className="load">Carregando...</p>
+      <p>Carregando...</p>
     </>
   );
 }
