@@ -11,7 +11,7 @@ const list = [
 ];
 
 function Details() {
-  const data = useContext(DataContext);
+  const { data } = useContext(DataContext);
 
   return (
     <div className="details flex">

@@ -3,8 +3,8 @@ import { DataContext } from "../../contexts/api";
 import "./current.css"
 
 function Current() {
-  const data = useContext(DataContext);
-
+  const { data } = useContext(DataContext);
+  
   return (
     <div className="current flex">
       <div className="tempContainer flex">

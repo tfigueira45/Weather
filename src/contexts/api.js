@@ -34,7 +34,7 @@ export async function searchWeatherData(q){
 
   } catch (error) {
     console.log(error); 
-    return null;
+    return "e";
   }
 }
 
@@ -51,7 +51,7 @@ export function DataProvider({ children }) {
   }, []);
 
   return (
-    <DataContext.Provider value={data}>
+    <DataContext.Provider value={{ data, setData }}>
       {children}
     </DataContext.Provider>
   );

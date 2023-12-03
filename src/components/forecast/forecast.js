@@ -11,7 +11,7 @@ function Forecast() {
     days.push(weekDays[(day + i) % 7]);
   }
 
-  const data = useContext(DataContext);
+  const { data } = useContext(DataContext);
 
   return (
     <div className="forecast flex">

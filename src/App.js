@@ -7,7 +7,7 @@ import Forecast from './components/forecast/forecast';
 import './App.css';
 
 function App() {
-  const data = useContext(DataContext)
+  const { data } = useContext(DataContext)
   return data ? (
     <>
       <Header />
