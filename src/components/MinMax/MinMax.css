@@ -1,0 +1,11 @@
+.minMax,
+.minMax .flex {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.minMax .flex {
+    font-size: 20px;
+    gap: 2px;
+}

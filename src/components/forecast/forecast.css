@@ -23,6 +23,6 @@
     font-size: 18px;
 }
 
-.forecast li .small {
-    font-size: 16px;
+.minMax .flex p {
+    font-size: 14px;
 }

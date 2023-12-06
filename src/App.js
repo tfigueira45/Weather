@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
-import { DataContext } from './contexts/api';
-import Header from './components/header/header';
-import Current from './components/current/current'
-import Details from './components/details/details';
-import Forecast from './components/forecast/forecast';
+import { DataContext } from './contexts/Context';
+import Head from './components/Head/Head';
+import Current from './components/Current/Current'
+import Details from './components/Details/Details';
+import Forecast from './components/Forecast/Forecast';
 import './App.css';
 
 function App() {
   const { data } = useContext(DataContext)
   return data ? (
     <>
-      <Header />
+      <Head />
       <Current />
       <Details />
       <Forecast />

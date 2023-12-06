@@ -1,5 +1,5 @@
 import React, { useState, useContext, useRef } from "react";
-import "./searchBar.css"
+import "./SearchBar.css"
 import { searchWeatherData, DataContext } from "../../../contexts/api";
 
 function SearchBar(){

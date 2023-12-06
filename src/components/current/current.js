@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import { DataContext } from "../../contexts/api";
-import "./current.css"
+import MinMax from "../MinMax/MinMax";
+import "./Current.css"
 
 function Current() {
   const { data } = useContext(DataContext);
@@ -13,9 +14,7 @@ function Current() {
           {data.currentConditions.temp}°
         </span>
       </div>
-      <p className="minMax">
-        {`${data.days[0].tempmin}°/${data.days[0].tempmax}°`}
-      </p>
+      <MinMax data={data.days[0]} />
       <p className="desc">{data.currentConditions.conditions}</p>
     </div>
   )

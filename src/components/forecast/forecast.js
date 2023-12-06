@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../contexts/api";
-import "./forecast.css"
+import MinMax from "../MinMax/MinMax";
+import "./Forecast.css"
 
 const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 
@@ -22,7 +23,7 @@ function Forecast() {
                 <span>{item}</span>
                 <img src={`Weather/images/${icon}.png`} alt={icon} />
                 <p>{temp}°</p>
-                <span className="small">{`${tempmin.toFixed(0)}°/${tempmax.toFixed(0)}°`}</span>
+                <MinMax data={data.days[0]} />
             </li>
         );
       })}

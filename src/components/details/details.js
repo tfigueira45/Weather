@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../contexts/api";
-import "./details.css";
+import "./Details.css";
 
 
 const list = [

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../contexts/api";
-import SearchBar from './searchBar/searchBar'
-import "./header.css";
+import SearchBar from './SearchBar/SearchBar'
+import "./Head.css";
 
 function Header() {
   const { data } = useContext(DataContext);

@@ -10,14 +10,10 @@
     font-size: 44px;
 }
 
-.current .tempContainer {
+.current .tempContainer{
     align-items: center;
     justify-content: center;
     gap: 10px;
-}
-
-.current .minMax {
-    font-size: 21px;
 }
 
 .current .desc {
