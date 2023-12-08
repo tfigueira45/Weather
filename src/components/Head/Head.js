@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DataContext } from "../../contexts/api";
+import { DataContext } from '../../contexts/Context';
 import SearchBar from './SearchBar/SearchBar'
 import "./Head.css";
 

@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
-import { DataContext } from "../../contexts/api";
+import { DataContext } from '../../contexts/Context';
 import MinMax from "../MinMax/MinMax";
+import { images } from "../../assets/images/images";
 import "./Current.css"
 
 function Current() {
@@ -9,7 +10,7 @@ function Current() {
   return (
     <div className="current flex">
       <div className="tempContainer flex">
-        <img src={`Weather/images/${data.currentConditions.icon}.png`} alt={data.currentConditions.icon} />
+        <img src={images[data.currentConditions.icon.replaceAll(/-/g,'_')]} alt={data.currentConditions.icon} />
         <span className="temperature">
           {data.currentConditions.temp}°
         </span>

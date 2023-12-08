@@ -1,26 +1,28 @@
 import React, { useState, useContext, useRef } from "react";
 import "./SearchBar.css"
-import { searchWeatherData, DataContext } from "../../../contexts/api";
+import { DataContext } from '../../../contexts/Context';
+import { searchWeatherData } from "../../../services/WeatherData"
 
 function SearchBar(){
     const { data, setData } = useContext(DataContext);
     const [value, setValue] = useState('');
 
-    const previewData = useRef(data)
+    const previewData = useRef(data);
 
     const handleChange = ({ target }) => {
-        setValue(target.value)
+        setValue(target.value);
     }
 
     const handleClick = async () => {
-        setData(null)
-        const weatherData = await searchWeatherData(value);
-        if(weatherData && weatherData !== "e"){
-            setData(weatherData)
-            previewData.current = weatherData
-        } else {
-            setData(previewData.current)
-            alert("Local não encontrado!")
+        setData(null);
+        try {
+            const weatherData = await searchWeatherData(value);
+            setData(weatherData);
+            previewData.current = weatherData;
+        } catch (error) {
+            setData(previewData.current);
+            alert("Local não encontrado!");
+            throw new Error(error);
         }
     }
 

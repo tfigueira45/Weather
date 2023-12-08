@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import { DataContext } from "../../contexts/api";
+import { DataContext } from '../../contexts/Context';
 import MinMax from "../MinMax/MinMax";
+import { images } from "../../assets/images/images";
 import "./Forecast.css"
 
 const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
@@ -8,7 +9,7 @@ const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 function Forecast() {
   const day = new Date().getDay();
   let days = [];
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 4; i++) {
     days.push(weekDays[(day + i) % 7]);
   }
 
@@ -17,11 +18,11 @@ function Forecast() {
   return (
     <div className="forecast flex">
       {days.map((item, i) => {
-        const {icon, temp, tempmin, tempmax} = data.days[i + 1]
+        const {icon, temp} = data.days[i + 1]
         return (
             <li className="flex" key={item}>
                 <span>{item}</span>
-                <img src={`Weather/images/${icon}.png`} alt={icon} />
+                <img src={images[icon.replaceAll(/-/g,'_')]} alt={icon} />
                 <p>{temp}°</p>
                 <MinMax data={data.days[0]} />
             </li>

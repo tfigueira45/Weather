@@ -1,8 +1,8 @@
-import getApiData from './ApiData';
+import { getApiData } from './ApiData';
 
 const weatherApiKey = "LW3CHSSCPTHUDGR654B5UJCSW";
 
-async function getWeatherData(location) {
+export async function getWeatherData(location) {
   let weather = await getApiData(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${weatherApiKey}&unitGroup=metric&lang=pt`
   );
@@ -16,9 +16,7 @@ export async function searchWeatherData(q){
     return weather;
 
   } catch (error) {
-    console.log(error); 
-    return "e";
+    return error;
   }
 }
 
-export default getWeatherData;

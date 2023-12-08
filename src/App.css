@@ -19,15 +19,18 @@ body {
   display: flex;
 }
 
-#root{
+main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 100%;
+  max-width: 80%;
+  padding: 30px 20px 10px;
+  background-color: #141414d0;
+  border-radius: 10px;
 }
 
-.spinner{
+.load{
   height: 70px;
   width: 70px;
   border: 15px solid rgb(255, 255, 255, 0.1);
@@ -37,10 +40,6 @@ body {
   animation: spin 1s linear infinite;
 }
 
-.load {
-  font-size: 18px;
-}
-
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -48,7 +47,7 @@ body {
 }
 
 @media (max-width: 750px) {
-  #root {
+  main {
     width: 100%;
     padding: 5px;
   }
