@@ -13,16 +13,18 @@ function SearchBar(){
         setValue(target.value);
     }
 
-    const handleClick = async () => {
-        setData(null);
-        try {
-            const weatherData = await searchWeatherData(value);
-            setData(weatherData);
-            previewData.current = weatherData;
-        } catch (error) {
-            setData(previewData.current);
-            alert("Local não encontrado!");
-            throw new Error(error);
+    const handleClick = async ({target}) => {
+        if(target.value !== ''){
+            setData(null);
+            try {
+                const weatherData = await searchWeatherData(value);
+                setData(weatherData);
+                previewData.current = weatherData;
+            } catch (error) {
+                setData(previewData.current);
+                alert("Local não encontrado!");
+                throw new Error(error);
+            }
         }
     }
 

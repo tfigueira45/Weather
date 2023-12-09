@@ -11,12 +11,13 @@ function App() {
 
   useEffect(() => {
     if(data){ 
-      document.body.style.backgroundImage = `
-        url(https://source.unsplash.com/1600x900/?${data.resolvedAddress.split(/,/)[0]}
-      `;
-      console.log(document.body.style.backgroundImage)
+      let city = data.resolvedAddress.split(/,/)[0].replace(/\s/g, '');
+
+      document.body.style.background = `
+        url(https://source.unsplash.com/1600x900/?${city}) no-repeat top center/cover
+      `; 
     }
-  }, [data]);
+  });
 
   return data ? (
     <main>
@@ -26,10 +27,10 @@ function App() {
       <Forecast />
     </main>
   ) : (
-    <>
+    <main className="load">
       <span className="spinner"></span>
       <p>Carregando...</p>
-    </>
+    </main>
   );
 }
 
