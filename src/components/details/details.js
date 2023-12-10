@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DataContext } from '../../contexts/Context';
+import { WeatherContext } from '../../contexts/WeatherContext';
 import "./Details.css";
 
 
@@ -11,7 +11,7 @@ const list = [
 ];
 
 function Details() {
-  const { data } = useContext(DataContext);
+  const { data } = useContext(WeatherContext);
 
   return (
     <div className="details flex">

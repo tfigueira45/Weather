@@ -1,8 +1,9 @@
 import React, {useContext} from "react";
-import { DataContext } from '../../contexts/Context';
+import { DataContext } from '../../contexts/WeatherContext';
 import MinMax from "../MinMax/MinMax";
 import { images } from "../../assets/images/images";
 import "./Current.css"
+import ToggleUnit from "./ToggleUnit/ToggleUnit";
 
 function Current() {
   const { data } = useContext(DataContext);
@@ -14,6 +15,7 @@ function Current() {
         <span className="temperature">
           {data.currentConditions.temp}°
         </span>
+        <ToggleUnit />
       </div>
       <MinMax data={data.days[0]} />
       <p className="desc">{data.currentConditions.conditions}</p>

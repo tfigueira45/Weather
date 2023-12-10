@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { DataContext } from '../../contexts/Context';
+import { WeatherContext } from '../../contexts/WeatherContext';
 import SearchBar from './SearchBar/SearchBar'
 import "./Head.css";
 
 function Header() {
-  const { data } = useContext(DataContext);
+  const { data } = useContext(WeatherContext);
 
   console.log(data)
 

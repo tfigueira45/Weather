@@ -1,10 +1,10 @@
 import React, { useState, useContext, useRef } from "react";
 import "./SearchBar.css"
-import { DataContext } from '../../../contexts/Context';
+import { WeatherContext } from '../../contexts/WeatherContext';
 import { searchWeatherData } from "../../../services/WeatherData"
 
 function SearchBar(){
-    const { data, setData } = useContext(DataContext);
+    const { data, setData } = useContext(WeatherContext);
     const [value, setValue] = useState('');
 
     const previewData = useRef(data);

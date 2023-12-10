@@ -1,9 +1,9 @@
 import { createContext, useState, useEffect } from "react";
 import { getLocationData } from "../services/LocationData";
 
-export const DataContext = createContext();
+export const WeatherContext = createContext();
 
-export function DataProvider({ children }) {
+export function WeatherProvider({ children }) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -16,8 +16,8 @@ export function DataProvider({ children }) {
   }, []);
 
   return (
-    <DataContext.Provider value={{ data, setData }}>
+    <WeatherContext.Provider value={{ data, setData }}>
       {children}
-    </DataContext.Provider>
+    </WeatherContext.Provider>
   );
-}
+};
