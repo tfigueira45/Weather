@@ -2,15 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { WeatherProvider } from './contexts/Context';
+import { WeatherProvider } from './contexts/WeatherContext';
 import reportWebVitals from './reportWebVitals';
+import { UnitProvider } from './contexts/UnitContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <WeatherProvider>
-      <App />
+      <UnitProvider>
+        <App />
+      </UnitProvider>
     </WeatherProvider>
   </React.StrictMode>
 );

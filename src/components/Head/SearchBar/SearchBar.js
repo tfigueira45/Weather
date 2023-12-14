@@ -1,6 +1,6 @@
 import React, { useState, useContext, useRef } from "react";
 import "./SearchBar.css"
-import { WeatherContext } from '../../contexts/WeatherContext';
+import { WeatherContext } from "../../../contexts/WeatherContext";
 import { searchWeatherData } from "../../../services/WeatherData"
 
 function SearchBar(){

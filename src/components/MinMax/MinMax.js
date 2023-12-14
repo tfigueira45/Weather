@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import arrow_min from "../../assets/icons/arrow_min.svg";
 import arrow_max from "../../assets/icons/arrow_max.svg";
+import { calcUnit } from "../../utils/calcUnit";
+import { UnitContext } from "../../contexts/UnitContext";
 import './MinMax.css';
 
 function MinMax({data}){
     const indexs = ['tempmin', 'tempmax'] 
     const icons = [arrow_min, arrow_max]
 
+    const { unit } = useContext(UnitContext);
+
     return (
         <div className="minMax flex">
             {indexs.map((item, i, arr) => {
                 return (<div className="flex" key={i}>
                     <img src={icons[i]} alt={`arrow_${item}`} />
-                    <p>{data[item]}°</p>
+                    <p>{calcUnit(unit, data[item])}°</p>
                 </div>)
             })}
         </div>

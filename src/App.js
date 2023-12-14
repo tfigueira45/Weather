@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { DataContext } from './contexts/Context';
+import { WeatherContext } from './contexts/WeatherContext';
 import Head from './components/Head/Head';
 import Current from './components/Current/Current'
 import Details from './components/Details/Details';
@@ -7,7 +7,7 @@ import Forecast from './components/Forecast/Forecast';
 import './App.css';
 
 function App() {
-  const { data } = useContext(DataContext);
+  const { data } = useContext(WeatherContext);
 
   useEffect(() => {
     if(data){ 
