@@ -16,7 +16,7 @@ function App() {
       let city = data.resolvedAddress.split(/,/)[0].replace(/\s/g, '');
 
       document.body.style.background = `
-        url(https://source.unsplash.com/1600x900/?${city}) no-repeat top center/cover
+        url(https://source.unsplash.com/1600x900/?${city})
       `; 
     }
   });
