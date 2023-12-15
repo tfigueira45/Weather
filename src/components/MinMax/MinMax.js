@@ -12,9 +12,9 @@ function MinMax({data}){
     const { unit } = useContext(UnitContext);
 
     return (
-        <div className="minMax flex">
+        <div className="minMax centered">
             {indexs.map((item, i, arr) => {
-                return (<div className="flex" key={i}>
+                return (<div className="flex centered" key={i}>
                     <img src={icons[i]} alt={`arrow_${item}`} />
                     <p>{calcUnit(unit, data[item])}°</p>
                 </div>)

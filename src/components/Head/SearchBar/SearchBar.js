@@ -22,8 +22,8 @@ function SearchBar(){
                 previewData.current = weatherData;
             } catch (error) {
                 setData(previewData.current);
-                alert("Local não encontrado!");
-                throw new Error(error);
+                alert("O Local não pôde ser encontrado!");
+                console.error(`Handle Click Error =\n`, error);
             }
         }
     }
@@ -39,4 +39,3 @@ function SearchBar(){
 }
 
 export default SearchBar;
-

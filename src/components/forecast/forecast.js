@@ -3,6 +3,8 @@ import { WeatherContext } from '../../contexts/WeatherContext';
 import MinMax from "../MinMax/MinMax";
 import { images } from "../../assets/images/images";
 import "./Forecast.css"
+import { calcUnit } from "../../utils/calcUnit";
+import { UnitContext } from "../../contexts/UnitContext";
 
 const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 
@@ -14,16 +16,17 @@ function Forecast() {
   }
 
   const { data } = useContext(WeatherContext);
+  const { unit } = useContext(UnitContext);
 
   return (
     <div className="forecast flex">
       {days.map((item, i) => {
         const {icon, temp} = data.days[i + 1]
         return (
-            <li className="flex" key={item}>
+            <li className="centered" key={item}>
                 <span>{item}</span>
                 <img src={images[icon.replaceAll(/-/g,'_')]} alt={icon} />
-                <p>{temp}°</p>
+                <p>{calcUnit(unit, temp)}°</p>
                 <MinMax data={data.days[i + 1]} />
             </li>
         );

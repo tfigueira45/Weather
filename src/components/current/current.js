@@ -1,19 +1,22 @@
 import React, {useContext} from "react";
-import { DataContext } from '../../contexts/WeatherContext';
+import { WeatherContext } from '../../contexts/WeatherContext';
 import MinMax from "../MinMax/MinMax";
 import { images } from "../../assets/images/images";
 import "./Current.css"
 import ToggleUnit from "./ToggleUnit/ToggleUnit";
+import { calcUnit } from "../../utils/calcUnit";
+import { UnitContext } from "../../contexts/UnitContext";
 
 function Current() {
-  const { data } = useContext(DataContext);
+  const { data } = useContext(WeatherContext);
+  const { unit } = useContext(UnitContext);
   
   return (
     <div className="current flex">
-      <div className="tempContainer flex">
+      <div className="tempContainer centered">
         <img src={images[data.currentConditions.icon.replaceAll(/-/g,'_')]} alt={data.currentConditions.icon} />
         <span className="temperature">
-          {data.currentConditions.temp}°
+          {calcUnit(unit, data.currentConditions.temp)}°
         </span>
         <ToggleUnit />
       </div>

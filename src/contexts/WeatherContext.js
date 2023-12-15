@@ -8,8 +8,12 @@ export function WeatherProvider({ children }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getLocationData();
-      setData(result);
+      try {
+        const result = await getLocationData();
+        setData(result);
+      } catch (error) {
+        console.error(`Fetch Data Error =\n`, error);
+      }
     };
 
     fetchData();
@@ -20,4 +24,4 @@ export function WeatherProvider({ children }) {
       {children}
     </WeatherContext.Provider>
   );
-};
+}

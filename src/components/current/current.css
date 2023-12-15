@@ -1,8 +1,8 @@
 .current {
-    justify-content: center;
-    flex-direction: column;
     text-align: center;
     gap: 10px;
+    justify-content: center;
+    flex-direction: column;
     padding-bottom: 20px;
 }
 
@@ -11,8 +11,6 @@
 }
 
 .current .tempContainer{
-    align-items: center;
-    justify-content: center;
     gap: 10px;
 }
 

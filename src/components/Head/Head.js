@@ -6,8 +6,6 @@ import "./Head.css";
 function Header() {
   const { data } = useContext(WeatherContext);
 
-  console.log(data)
-
   return (
     <header>
         <SearchBar />

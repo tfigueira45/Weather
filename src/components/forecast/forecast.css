@@ -1,13 +1,11 @@
 .forecast {
     flex-direction: row;
-    gap: 15px;
+    gap: 10px;
 }
 
 .forecast li {
     list-style: none;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 0 2px 5px;
 }
 
