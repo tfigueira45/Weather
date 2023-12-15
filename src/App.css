@@ -15,15 +15,6 @@ body {
   overflow: hidden;
 }
 
-.flex {
-  display: flex;
-}
-
-.centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 main {
   flex-direction: column;
@@ -45,8 +36,4 @@ main {
     border-radius: 0;
   }
 
-  .forecast {
-    gap: 3px;
-    padding: 0 15px 0;
-  }
 }

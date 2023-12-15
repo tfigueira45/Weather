@@ -6,6 +6,7 @@ import Details from './components/Details/Details';
 import Forecast from './components/Forecast/Forecast';
 import Load from './components/Load/Load';
 import './App.css';
+import './utils/class.css'
 
 function App() {
   const { data } = useContext(WeatherContext);
