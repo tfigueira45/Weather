@@ -16,9 +16,15 @@ function App() {
       let city = data.resolvedAddress.split(/,/)[0].replace(/\s/g, '');
 
       document.body.style.background = `
-        url(https://source.unsplash.com/1600x900/?${city})
+        url(https://source.unsplash.com/1600x900/?${city}) no-repeat top center/cover
       `; 
     }
+  });
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('#search-bar').addEventListener('focus', (event) => {
+        event.target.scrollIntoView({behavior: "smooth"});
+    });
   });
 
   return data ? (

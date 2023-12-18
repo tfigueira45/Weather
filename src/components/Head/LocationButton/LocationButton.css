@@ -1,0 +1,13 @@
+.locationButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    height: 35px;
+    width: 35px;
+    background-color: #7db2f8;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

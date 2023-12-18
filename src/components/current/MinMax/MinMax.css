@@ -1,3 +1,4 @@
+
 .minMax,
 .minMax .flex {
     gap: 10px;
@@ -6,4 +7,8 @@
 .minMax .flex {
     font-size: 20px;
     gap: 2px;
+}
+
+.minMax .flex img {
+    scale: .9
 }

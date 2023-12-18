@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { WeatherContext } from '../../contexts/WeatherContext';
 import SearchBar from './SearchBar/SearchBar'
+import LocationButton from "./LocationButton/LocationButton";
 import "./Head.css";
 
 function Header() {
@@ -8,7 +9,10 @@ function Header() {
 
   return (
     <header>
-        <SearchBar />
+        <div className="headContainer">
+          <SearchBar />
+          <LocationButton />
+        </div>
         <span>{data.resolvedAddress.split(/,/).slice(0,2).join(',')}</span>
     </header>
   );

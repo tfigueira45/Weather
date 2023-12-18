@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
-import arrow_min from "../../assets/icons/arrow_min.svg";
-import arrow_max from "../../assets/icons/arrow_max.svg";
-import { calcUnit } from "../../utils/calcUnit";
-import { UnitContext } from "../../contexts/UnitContext";
+import arrow_min from "../../../assets/icons/arrow_min.svg";
+import arrow_max from "../../../assets/icons/arrow_max.svg";
+import { calcUnit } from "../../../utils/calcUnit";
+import { UnitContext } from "../../../contexts/UnitContext";
 import './MinMax.css';
 
 function MinMax({data}){
-    const indexs = ['tempmin', 'tempmax'] 
-    const icons = [arrow_min, arrow_max]
+    const indexs = ['tempmax', 'tempmin'] 
+    const icons = [arrow_max, arrow_min]
 
     const { unit } = useContext(UnitContext);
 

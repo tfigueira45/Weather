@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { WeatherContext } from '../../contexts/WeatherContext';
-import MinMax from "../MinMax/MinMax";
 import { images } from "../../assets/images/images";
 import "./Forecast.css"
 import { calcUnit } from "../../utils/calcUnit";
@@ -27,7 +26,6 @@ function Forecast() {
                 <span>{item}</span>
                 <img src={images[icon.replaceAll(/-/g,'_')]} alt={icon} />
                 <p>{calcUnit(unit, temp)}°</p>
-                <MinMax data={data.days[i + 1]} />
             </li>
         );
       })}

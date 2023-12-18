@@ -19,9 +19,12 @@
 
 @media (max-width: 700px) {
     .details ul {
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
-        grid-template-rows: repeat(2, 50%);
+        flex-direction: column;
+        gap: 5px;
+    }
+    .details ul li {
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 

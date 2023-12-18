@@ -1,7 +1,6 @@
 .search-container {
     display: flex;
     align-items: stretch;
-    margin: auto;
     height: 35px;
 }
 

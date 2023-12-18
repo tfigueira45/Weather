@@ -5,6 +5,13 @@ header {
     padding-bottom: 20px;
     text-align: center;
     width: 100%;
+    position: relative;
+}
+
+header .headContainer {
+    display: flex;
+    gap: 10px;
+    margin: auto;
 }
 
 header span {

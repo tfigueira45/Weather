@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import { WeatherContext } from '../../contexts/WeatherContext';
-import MinMax from "../MinMax/MinMax";
+import MinMax from "./MinMax/MinMax";
 import { images } from "../../assets/images/images";
 import "./Current.css"
 import ToggleUnit from "./ToggleUnit/ToggleUnit";
