@@ -21,12 +21,6 @@ function App() {
     }
   });
 
-  window.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelector('#search-bar').addEventListener('focus', (event) => {
-        event.target.scrollIntoView({behavior: "smooth"});
-    });
-  });
-
   return data ? (
     <main className="centered">
       <Head />

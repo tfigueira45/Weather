@@ -5,10 +5,14 @@
     margin-top: 12px;
 }
 
+.toggleUnit span:first-child{
+    color: #8aafdf;
+}
+
 .toggleUnit .divider {
     height: 1px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #8aafdf;;
 }
 
 .toggleUnit .clickable{
