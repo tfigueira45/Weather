@@ -19,7 +19,7 @@ function Details() {
           {list.map(({ label, key, unity }) => (
             <li className="flex" key={key}>
               <span className="label">{label}</span>
-              <span className="value" >{`${data.currentConditions[key]}${unity}`}</span>
+              <span className="value" >{`${key === "precipprob" ? data.days[0][key] : data.currentConditions[key]}${unity}`}</span>
             </li>
           ))}
       </ul>
